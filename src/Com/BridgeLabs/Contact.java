@@ -7,7 +7,9 @@ public class Contact {
 	private String City;
 	private String State;
 	
-	void Contact(String Name,String Age,String PhoneNumber,String City) {
+	
+	public Contact(String Name,String PhoneNumber,String Age,String City,String state) {
+		
 		this.Name=Name;
 		this.Age=Age;
 		this.PhoneNumber=PhoneNumber;
@@ -15,7 +17,13 @@ public class Contact {
 		this.State=State;
 		
 	}
-
+	public Contact() {
+		this.Name=Name;
+		this.Age=Age;
+		this.PhoneNumber=PhoneNumber;
+		this.City=City;
+		this.State=State;
+	}
 	/**
 	 * @return the name
 	 */
