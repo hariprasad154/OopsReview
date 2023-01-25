@@ -3,6 +3,7 @@ import Com.BridgeLabs.Contact;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -12,11 +13,12 @@ public class AdressBook {
 	
 	Scanner src =new Scanner (System.in);
 	static List<Contact> Contactlist=new ArrayList<>();
-	Map<Object,String>hashMap=new HashMap<Object,String>();
+	Map<String,Contact>hashMap=new HashMap<String,Contact>();
 	
 
 	void AddresssBook(Contact contact) {
 		Contactlist.add(contact);	
+		hashMap.put(contact.getName(), contact);
 	}
 	
 	void addContact() {
@@ -42,18 +44,26 @@ public class AdressBook {
 		
 		AddresssBook(contact);	
 		
-		hashMap.put(Contactlist,contact.getName() );
+		//hashMap.put(Contactlist,contact.getName() );
 		
 		
 	}
+//	void HasBook() {
+//		Iterator <String>iterator =hashMap.keySet().iterator();
+//		
+//		while(iterator.hasNext()) {
+//			Contact temp=hashMap.get(iterator.next());
+//			System.out.println(temp.getName() + " ");
+//		}
+//	}
 void Book() {
-	
-	
-		Set<Map.Entry<Object, String>> entry=hashMap.entrySet();
-		for (Map.Entry<Object, String > j :entry) {
-			System.out.println(j);
-			System.out.println(j.getKey());
-			System.out.println(j.getValue());
+	System.out.println("!!!!!!!!!");
+	Set<Map.Entry<String,Contact>> entry=hashMap.entrySet();
+		for (Map.Entry<String,Contact > j :entry) {
+			System.out.println("this is j "+j);
+			System.out.println("this is the key "+j.getKey());
+			
+			System.out.println("this is the value "+j.getValue());
 	
 			
 		}
